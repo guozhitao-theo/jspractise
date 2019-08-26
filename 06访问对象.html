@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		姓名：<input type="text" name="name" /></br>
+		性别：<input type="text" name="sex" /></br>
+		年龄：<input type="text" name="age" /></br>
+		电话：<input type="text" name="tel" /></br>
+		<button>提交</button>
+	</body>
+</html>
+<script>
+	//定义一个有属性的对象
+	var person = {
+		name:'',
+		sex:'',
+		_age:'',
+		tel:''
+	}
+	//将获取的value值存入对象
+	var name = document.querySelector('[name=name]').value
+	var sex = document.querySelector('[name=sex]').value
+	var age = document.querySelector('[name=age]').value
+	var tel = document.querySelector('[name=tel]').value
+	//	点击按钮时
+	document.querySelector('button').onclick = function(){
+	//将获取的value值存入对象
+	var name = document.querySelector('[name=name]').value
+	var sex = document.querySelector('[name=sex]').value
+	var age = document.querySelector('[name=age]').value
+	var tel = document.querySelector('[name=tel]').value
+	
+	Object.defineProperty(person,'age',{
+		//获取得到的age
+		get: function(){
+			return this._age
+		},
+		//设置age时传一个age
+		set: function(age1){
+			//先将获取的字符串转换成number、
+			age1 = Number(age1)
+			if(age1<1){
+				age1='你囊个越活越转去哦?'
+			}else if(age1>100){
+				age1 = '你硬是要当神仙麦?'
+			}
+			this._age=age1
+		}
+	})
+	
+	
+	//将获取的值写入对象
+	person.name = name
+	person.sex = sex
+	person.age = age
+	person.tel = tel
+	document.querySelector('[name=age]').value=person.age
+}
+
+	
+</script>
