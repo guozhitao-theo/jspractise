@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+<script>
+//	变量的复制
+	var a = 1;
+	var b =3 ;
+	b = a
+//	console.log(a,b)
+	var obj = {
+		name:'guozhitao',
+		age: 18,
+		exp: 'shuai'
+	}
+	var obj2 = obj
+	obj2.num = 123
+//	console.log(obj,obj2)
+	
+	//函数的方式复制
+	
+	function fn(c){
+		c=2
+		console.log(c,a)
+	}
+	fn(a)
+	
+	function fn2(obj){
+		obj.stu = 'verygood'
+		console.log(obj,obj2)
+	}
+	fn2(obj2)
+</script>

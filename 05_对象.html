@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var obj = {
+		name: '郭治涛',
+		age: 18,
+	}
+	
+	Object.defineProperty(obj,'name',{
+		writable: true,
+		enumerable: true,
+		configurable: false,
+		value: 'aa'
+	})
+	Object.getOwnPropertyDescriptor(obj,'name')
+	for(var prop in obj){
+		console.log(prop)
+	}
+	delete obj.name
+	console.log(Object.getOwnPropertyDescriptor(obj,'name'))
+	console.log(obj.name) 
+</script>

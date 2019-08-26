@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//定义一个全局变量
+	var a = 11111
+	
+	function func(){
+		//定义一个局部变量
+		var b = 1233252
+		
+		function func2(){
+			var c = 999
+			console.log(c)
+		}
+		func2()
+		console.log(a,b)
+	}
+	func()
+	
+	
+</script>
