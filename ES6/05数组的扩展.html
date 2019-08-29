@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+//对象转数组
+//先定义一个对象
+let obj = {
+	0:'数组1',
+	1:'数组2',
+	2:'数组3',
+	4:'数组4',
+	length : 4
+};
+//console.log(obj)
+////使用对象转数组的时候必须添加数组的长度
+//let ar = Array.from(obj)
+//console.log(ar)
+////转数组的时候下标必须在length以内，否则当下表没有呀的时候，其中间跳过的下表打印为undefined
+
+//Array.of()方法将以逗号分隔的字符串转成数组
+let aa = Array.of(1,2,2,3,5)
+console.log(aa)
+//copyWithin()复制数组中的某个下表开头某个下表结束的元素到规定的某个位置
+let bb = aa.copyWithin(0,2,3)
+console.log(bb)
+//返回符合条件的第一个值
+let cc = bb.find(function(v){
+	return v>1
+})
+console.log(cc)
+//返回符合条件的第一个值的下标
+ cc = bb.findIndex(function(v){
+	return v>1
+})
+console.log(cc)
+
+//fill(要填充的值，要填充的起始位置 ，要填充的结束位置)
+bb.fill('us',1,4)
+console.log(bb)
+
+//keys()获取的是数组的下标
+for (let em of bb.keys()){
+	console.log(em)
+}
+//values() 获取的是数组的值
+for(let bm of bb.values()){
+	console.log(bm)
+}
+//entries()将数组的下标和对应的值取出来放在一个数组里面
+for(let am of bb.entries()){
+	console.log(am)
+}
+//includes()验证数组中是否含有某个值，返回值为boolean
+console.log(bb.includes(2))
+
+//flat(要转换成的数组维度)转换数组的维度
+let  arr2 = [1,2,3,3,[5,7,7],0]
+let  arr4 = [2,3,4,5,[5,6,[8,6]]]
+let arr3 = arr2.flat(1)
+let arr5 = arr4.flat(2)
+console.log(arr3)
+console.log(arr5)
+
+//flatmap(加一个方法)
+let arr6 = arr3.flatMap(function(x){
+	return [x,x*2]
+	
+})
+console.log(arr6)
+
+</script>

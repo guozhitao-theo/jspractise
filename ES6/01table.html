@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.table-list{
+			display: none;
+			height: 300px;
+			width: 300px;
+			border: 1px solid #e2e2e2;
+			margin-top: 20px;
+		}
+		.table-list.on{
+			display: block;
+		}
+	</style>
+	<body>
+		<button class="table-title">1</button>
+		<button class="table-title">2</button>
+		<button class="table-title">3</button>
+		<div class="table-list on">
+			1
+		</div>
+		<div class="table-list">
+			2
+		</div>
+		<div class="table-list">
+			3
+		</div>
+	</body>
+</html>
+<script>
+	//先获取按钮
+	let btn = document.querySelectorAll('button')
+	//获取需要切换的盒子
+	let box= document.querySelectorAll('.table-list')
+	
+	//循环给按钮添加点击事件
+	for(let i=0;i<btn.length;i++){
+		btn[i].onclick = function(){
+			for(let j=0;j<btn.length;j++){
+				//移出盒子上所有的on类名
+				box[j].classList.remove('on')
+			}
+			box[i].classList.add('on')
+		}
+	}
+	
+	
+</script>
