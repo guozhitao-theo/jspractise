@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<!--symble是一种数据类型-->
+<!---->
+<script>
+	//创建一个symbol类型的变量不是对象
+	let s = Symbol('good')
+	console.log(s)
+	//如果symbol的参数是一个对象，那他会自动调用toString方法
+	let obj = {
+		name : 'guozhi',
+		age: 18,
+		exp: function(){
+			return 'shuiai'
+		}
+	}
+	let m =Symbol(obj.exp)
+	console.log(m)
+	
+	//	Symbol函数的参数只是表示对当前 Symbol 值的描述，因此相同参数的Symbol函数的返回值是不相等的。
+	let s1 = Symbol('1')
+	let s2 = Symbol('1')
+	console.log(s1 === s2 )
+	
+	//symbol的值不能与其他的值进行运算,模板字符串也不行
+//	console.log('shdjhn'+s1)
+//	console.log(`shd${s1}jhn`)
+</script>
+
