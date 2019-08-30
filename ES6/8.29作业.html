@@ -79,7 +79,7 @@
 	let obj = {};
 	let arr = [];
 	//将foo的值赋给obj的prop属性，将bar 的值赋给arr数组的下标0的值
-	{foo: obj.prop, bar: arr[0]} = {foo: 123, bar: true}
+	({foo: obj.prop, bar: arr[0]} = {foo: 123, bar: true})
 	console.log(obj,arr)
 
 

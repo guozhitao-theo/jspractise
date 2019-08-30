@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>对象的扩展</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//属性名与变量名一样时可只写属性名
+	let name = '郭治涛'
+	let person = {
+		name,
+		age:12
+	}
+	console.log(person)
+//	对象内属性的方法可省略
+	let  obj = {
+		aa(){
+			console.log('旺旺')
+		}
+	}
+	obj.aa()
+	//对象的表达式可由表达式的形式来获取值,此时采用中括号
+	let a = 'a'
+	console.log(person[a+'ge'])
+	//对象的方法的名字可由.name获得
+	console.log(obj.aa.name)
+	//对象的访问类型数据
+	let person1 = {
+		a:1,
+		get gzt(){
+			return this.a
+		},
+		set gzt(value){
+			this.a=value
+		}
+	}
+  let property = 	Object.getOwnPropertyDescriptor(person1,'gzt')
+  console.log(property.get.name)
+</script>

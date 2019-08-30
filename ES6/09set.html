@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>set练习</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//set能将数组去重
+	let arr = [1,5,2,0,4,5,5,4,1,2,12,5]
+	let arr1 = new Set(arr)
+	console.log(arr1)
+	//将Set类型转为数组
+	arr = [...arr1]
+	console.log(arr)
+	//.add()方法在set
+	arr1.add(777)
+	console.log(arr1)
+	//获取set 的长度
+	console.log(arr1.size)
+	//for of循环出,没有下标
+	for(let item of arr1.entries() ){
+		console.log(item)
+	}
+	
+</script>
